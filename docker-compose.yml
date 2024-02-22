@@ -11,18 +11,6 @@ services:
     depends_on:
       - mysql
 
-  mysql:
-    container_name: "vibe-mysql"
-    image: mysql:5.7
-    platform: linux/x86_64
-    ports:
-      - "3306:3306"
-    environment:
-      MYSQL_DATABASE: vibe-adventures
-      #MYSQL_USER: root
-      #MYSQL_PASSWORD: root
-      MYSQL_ROOT_PASSWORD: root
-
   vue:
     container_name: "vibe-vue"
     build:
