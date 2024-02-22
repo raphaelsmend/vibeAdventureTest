@@ -6,8 +6,8 @@ services:
     build:
       context: .
       dockerfile: Dockerfile-laravel
-    volumes:
-      - ./laravel-app:/var/www/html
+    #volumes:
+    #  - ./laravel-app:/var/www/html
 
   vue:
     container_name: "vibe-vue"
