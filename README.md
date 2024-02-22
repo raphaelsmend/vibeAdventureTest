@@ -39,6 +39,11 @@ Cloning repository
 ```bash
 $ git clone git@github.com:raphaelsmend/vibeAdventureTest.git
 ```
+
+Observations
+============
+before build project, copy .env file and add line "TEQUILA_API_KEY="
+
 Installing
 ============
 
@@ -53,7 +58,3 @@ $ docker compose up -d
 
 access the url http://localhost and make some searchs
 ```
-
-Observations
-============
-before start your searchs, add line "TEQUILA_API_KEY=" in laravel-app/.env file
