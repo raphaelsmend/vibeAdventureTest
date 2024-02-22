@@ -43,6 +43,7 @@ Installing
 ============
 
 ```bash
+$ cd vibeAdventureTest/
 $ docker compose build
 ```
 Running
