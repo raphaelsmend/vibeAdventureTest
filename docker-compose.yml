@@ -8,8 +8,6 @@ services:
       dockerfile: Dockerfile-laravel
     volumes:
       - ./laravel-app:/var/www/html
-    depends_on:
-      - mysql
 
   vue:
     container_name: "vibe-vue"
