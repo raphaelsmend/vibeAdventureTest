@@ -1,0 +1,43 @@
+version: '3'
+
+services:
+  laravel:
+    container_name: "vibe-laravel"
+    build:
+      context: .
+      dockerfile: Dockerfile-laravel
+    volumes:
+      - ./laravel-app:/var/www/html
+    depends_on:
+      - mysql
+
+  mysql:
+    container_name: "vibe-mysql"
+    image: mysql:5.7
+    platform: linux/x86_64
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_DATABASE: vibe-adventures
+      #MYSQL_USER: root
+      #MYSQL_PASSWORD: root
+      MYSQL_ROOT_PASSWORD: root
+
+  vue:
+    container_name: "vibe-vue"
+    build:
+      context: .
+      dockerfile: Dockerfile-vue
+    depends_on:
+      - laravel
+
+  nginx:
+    container_name: "vibe-nginx"
+    image: nginx:latest
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+    depends_on:
+      - laravel
+      - vue

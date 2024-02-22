@@ -1,0 +1,16 @@
+FROM bitnami/php-fpm:8.3.3-debian-12-r4
+
+ENV COMPOSER_ALLOW_SUPERUSER=1
+
+RUN apt-get autoclean
+RUN apt-get clean
+RUN apt-get update --allow-unauthenticated
+RUN apt-get install -y git
+RUN apt-get install -y unzip
+RUN apt-get install -y git
+
+WORKDIR /var/www/html
+
+COPY . .
+
+CMD php artisan serve --host=0.0.0.0 --port=8000
