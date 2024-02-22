@@ -50,8 +50,10 @@ Running
 ============
 ```bash
 $ docker compose up -d
+
+access the url http://localhost and make some searchs
 ```
 
 Observations
 ============
-all routes was made available in Imnsonia file with routes. filename: Insomnia_golang_crud_api.json
+before start your searchs, add line "TEQUILA_API_KEY=" in laravel-app/.env file
